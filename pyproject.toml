@@ -1,0 +1,25 @@
+
+[project]
+name = "chatbot-demo"
+version = "0.0.1"
+description = "a chatbot demo api"
+authors = [
+    {name = "TATA", email = "evadcmd@gmail.com"},
+]
+dependencies = [
+    "langchain[llms]>=0.0.228",
+    "fastapi[all]>=0.99.1",
+]
+requires-python = ">=3.11"
+license = {text = "MIT"}
+
+[tool.pdm.dev-dependencies]
+linting = [
+]
+lint = [
+    "black>=23.3.0",
+    "isort>=5.12.0",
+]
+
+[tool.pdm.scripts]
+dev.cmd="uvicorn chatbot.main:api --reload"
