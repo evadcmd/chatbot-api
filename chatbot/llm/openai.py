@@ -1,6 +1,6 @@
 from langchain.chains import ConversationChain
 from langchain.chat_models import ChatOpenAI
 
-chat = ChatOpenAI()  # type: ignore
+chat = ChatOpenAI(streaming=True)  # type: ignore
 
-conversation = ConversationChain(llm=chat)
+conversation = ConversationChain(llm=chat, verbose=True)
