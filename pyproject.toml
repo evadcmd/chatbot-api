@@ -7,19 +7,22 @@ authors = [
     {name = "TATA", email = "evadcmd@gmail.com"},
 ]
 dependencies = [
-    "langchain[llms]>=0.0.228",
+    "langchain[llms]>=0.0.240",
     "fastapi[all]>=0.99.1",
 ]
 requires-python = ">=3.11"
 license = {text = "MIT"}
 
 [tool.pdm.dev-dependencies]
-linting = [
-]
 lint = [
-    "black>=23.3.0",
+    "black>=23.7.0",
     "isort>=5.12.0",
+]
+test = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.1",
 ]
 
 [tool.pdm.scripts]
 dev.cmd="uvicorn chatbot.main:api --reload"
+test.cmd="pytest -s"
