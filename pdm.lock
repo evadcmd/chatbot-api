@@ -6,7 +6,7 @@ groups = ["default", "lint", "linting", "test"]
 cross_platform = true
 static_urls = false
 lock_version = "4.3"
-content_hash = "sha256:8b0a3db7e9929388cd74f426548f3b209670ecc5c25eee7b7b7d5f03d0f25226"
+content_hash = "sha256:1b323991e6661a3a99f787ddc3058c7dcbdedcb812be0e7fdfca144345fed634"
 
 [[package]]
 name = "aiohttp"
@@ -1253,6 +1253,30 @@ dependencies = [
 files = [
     {file = "portalocker-2.7.0-py2.py3-none-any.whl", hash = "sha256:a07c5b4f3985c3cf4798369631fb7011adb498e2a46d8440efc75a8f29a0f983"},
     {file = "portalocker-2.7.0.tar.gz", hash = "sha256:032e81d534a88ec1736d03f780ba073f047a06c478b06e2937486f334e955c51"},
+]
+
+[[package]]
+name = "prometheus-client"
+version = "0.17.1"
+requires_python = ">=3.6"
+summary = "Python client for the Prometheus monitoring system."
+files = [
+    {file = "prometheus_client-0.17.1-py3-none-any.whl", hash = "sha256:e537f37160f6807b8202a6fc4764cdd19bac5480ddd3e0d463c3002b34462101"},
+    {file = "prometheus_client-0.17.1.tar.gz", hash = "sha256:21e674f39831ae3f8acde238afd9a27a37d0d2fb5a28ea094f0ce25d2cbf2091"},
+]
+
+[[package]]
+name = "prometheus-fastapi-instrumentator"
+version = "6.1.0"
+requires_python = ">=3.7.0,<4.0.0"
+summary = "Instrument your FastAPI with Prometheus metrics."
+dependencies = [
+    "fastapi<1.0.0,>=0.38.1",
+    "prometheus-client<1.0.0,>=0.8.0",
+]
+files = [
+    {file = "prometheus_fastapi_instrumentator-6.1.0-py3-none-any.whl", hash = "sha256:2279ac1cf5b9566a4c3a07f78c9c5ee19648ed90976ab87d73d672abc1bfa017"},
+    {file = "prometheus_fastapi_instrumentator-6.1.0.tar.gz", hash = "sha256:1820d7a90389ce100f7d1285495ead388818ae0882e761c1f3e6e62a410bdf13"},
 ]
 
 [[package]]
