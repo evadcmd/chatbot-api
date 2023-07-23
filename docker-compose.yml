@@ -1,0 +1,28 @@
+services:
+  api-server:
+    container_name: chatbot-api-server
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 5200:5200
+
+  cache:
+    image: redis
+    container_name: chatbot-cache
+    ports:
+      - 6379:6379
+    volumes:
+      - .chatbot-cache:/data
+    command: ["redis-server", "--requirepass", "root"]
+
+  db:
+    image: mongo
+    container_name: chatbot-db
+    ports:
+      - 27017:27017
+    volumes:
+      - .chatbot-db:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root

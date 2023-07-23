@@ -1,0 +1,10 @@
+.venv
+
+.gitignore
+.vscode
+docker-compose.yml
+Dockerfile.dev
+
+.pytest_cache
+.coverage
+*.egg-info
