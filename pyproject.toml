@@ -7,12 +7,18 @@ authors = [
     {name = "TATA", email = "evadcmd@gmail.com"},
 ]
 dependencies = [
-    "langchain[llms]>=0.0.240",
     "fastapi[all]>=0.99.1",
     "concurrent-log-handler>=0.9.24",
+    "motor>=3.2.0",
+    "redis>=4.6.0",
+    "langchain>=0.0.240",
+    "openai>=0.27.8",
 ]
 requires-python = ">=3.11"
 license = {text = "MIT"}
+
+[tool.setuptools]
+py-modules = ["chatbot"]
 
 [tool.pdm.dev-dependencies]
 lint = [
@@ -26,5 +32,6 @@ test = [
 ]
 
 [tool.pdm.scripts]
-dev.cmd="uvicorn chatbot.main:api --reload"
-test.cmd="pytest --cov=./chatbot"
+dev.cmd = "uvicorn chatbot.main:api --reload"
+dev.env = {env = "dev"}
+test.cmd = "pytest --cov=./chatbot"
