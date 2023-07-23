@@ -9,6 +9,7 @@ authors = [
 dependencies = [
     "langchain[llms]>=0.0.240",
     "fastapi[all]>=0.99.1",
+    "concurrent-log-handler>=0.9.24",
 ]
 requires-python = ">=3.11"
 license = {text = "MIT"}
@@ -21,8 +22,9 @@ lint = [
 test = [
     "pytest>=7.4.0",
     "pytest-asyncio>=0.21.1",
+    "pytest-cov>=4.1.0",
 ]
 
 [tool.pdm.scripts]
 dev.cmd="uvicorn chatbot.main:api --reload"
-test.cmd="pytest -s"
+test.cmd="pytest --cov=./chatbot"
